@@ -1,0 +1,50 @@
+﻿@model DadosAPI
+
+
+@{
+    ViewData["Title"] = "Consultar";
+}
+
+<h1>Consultar</h1>
+
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Consultar">
+            <div class="form-group">
+                <label class="control-label">Semana</label>
+                <input asp-for="Semana" class="form-control" />
+                <p></p>
+                <label class="control-label">Ano</label>
+                <input asp-for="Ano" class="form-control" />
+                <p></p>
+                <label class="control-label">Mes</label>
+                <input asp-for="Mes" class="form-control" />
+            </div>
+            <p></p>
+            <div class="form-group">
+                <input type="submit" value="Consultar" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+<p></p>
+<div class="table-responsive">
+    <table class="table table-bordered table-sm table-dark" style="width:50%">
+        <thead>
+            <tr>
+                <th scope="col" style="width:1%; text-align:center">Inflamável</th>
+                <th scope="col" style="width:10%; text-align:center">Risco Biológico</th>
+                <th scope="col" style="width:1%; text-align:center">Refrigerado</th>
+                <th scope="col" style="width:20%">Sem Caracteristicas Especiais</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>@Html.DisplayFor(model => model.A)</td>
+                <td>@Html.DisplayFor(model => model.B)</td>
+                <td>@Html.DisplayFor(model => model.C)</td>
+                <td>@Html.DisplayFor(model => model.D)</td>
+            </tr>
+        </tbody>
+    </table>
+</div>

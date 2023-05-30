@@ -9,7 +9,7 @@ namespace NetCoreMVCSQL.Models
 
         }
 
-        public DbSet<Produto> Produto { get; set; }
+        public DbSet<Logistica> Logistica { get; set; }
 
     }
 }

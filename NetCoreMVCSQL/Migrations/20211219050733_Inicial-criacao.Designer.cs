@@ -23,7 +23,7 @@ namespace NetCoreMVCSQL.Migrations
 
             SqlServerModelBuilderExtensions.UseIdentityColumns(modelBuilder, 1L, 1);
 
-            modelBuilder.Entity("NetCoreMVCSQL.Models.Produto", b =>
+            modelBuilder.Entity("NetCoreMVCSQL.Models.Logistica", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
@@ -33,13 +33,44 @@ namespace NetCoreMVCSQL.Migrations
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"), 1L, 1);
 
                     b.Property<string>("Nome")
-                        .IsRequired()
                         .HasColumnType("nvarchar(max)")
                         .HasColumnName("Nome");
 
+                    b.Property<string>("TipoCargueiro")
+                        .HasColumnType("nvarchar(max)")
+                        .HasColumnName("TipoCargueiro");
+
+                    b.Property<string>("MinerioSaida")
+                        .HasColumnType("nvarchar(max)")
+                        .HasColumnName("MinerioSaida");
+
+                    b.Property<DateTime>("DataSaida")
+                        .HasColumnType("date")
+                        .HasColumnName("DataSaida");
+
+                    b.Property<DateTime>("DataRetorno")
+                        .HasColumnType("date")
+                        .HasColumnName("DataRetorno");
+
+                    b.Property<string>("QtdObtida")
+                        .HasColumnType("nvarchar(max)")
+                        .HasColumnName("QtdObtida");
+
+                    b.Property<string>("MinerioObtido")
+                        .HasColumnType("nvarchar(max)")
+                        .HasColumnName("MinerioObtido");
+
+                    b.Property<DateTime>("DataRecebido")
+                        .HasColumnType("date")
+                        .HasColumnName("DataRecebido");
+
+                    b.Property<string>("ValorCarga")
+                        .HasColumnType("nvarchar(max)")
+                        .HasColumnName("ValorCarga");
+
                     b.HasKey("Id");
 
-                    b.ToTable("Produto");
+                    b.ToTable("Logistica");
                 });
 #pragma warning restore 612, 618
         }
