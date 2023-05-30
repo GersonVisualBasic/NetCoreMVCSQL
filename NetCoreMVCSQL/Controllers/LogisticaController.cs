@@ -22,9 +22,6 @@ namespace NetCoreMVCSQL.Controllers
     {
         private readonly Contexto _context;
 
-        private readonly DadosAPI _dadosAPI;
-
-
         public LogisticaController(Contexto context)
         {
             _context = context;
@@ -36,6 +33,8 @@ namespace NetCoreMVCSQL.Controllers
             return View();
         }
 
+        // GET: Logisticas/Consultar
+
         public IActionResult Consultar()
         {
             return View();
@@ -44,8 +43,6 @@ namespace NetCoreMVCSQL.Controllers
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Consultar([Bind("Semana,Ano,Mes")] DadosAPI obj = null)
         {
-
-         //   DadosAPI obj = null;
             try
             {
                 using (HttpClient client = new HttpClient())
